@@ -12,7 +12,7 @@ import (
 func main() {
 	port, exists := os.LookupEnv("FUNCTIONS_CUSTOMHANDLER_PORT")
 	if !exists {
-		port = "7071"
+		port = "5000"
 	}
 	http.HandleFunc("/api/hi", hi.ExportParticipants)
 	fmt.Println("Go server listening on port", port)
