@@ -1,8 +1,8 @@
 {
   "IsEncrypted": false,
   "Values": {
-    "AzureWebJobsStorage": "",
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
     "FUNCTIONS_WORKER_RUNTIME": "custom",
-    "ENV_TEST": "env test"
+    "FUNCTIONS_CUSTOMHANDLER_PORT": 9000
   }
 }
