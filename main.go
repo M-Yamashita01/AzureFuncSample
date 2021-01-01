@@ -40,6 +40,8 @@ func helloHandler(w http.ResponseWriter, r *http.Request) {
 		message = fmt.Sprintf("Hello, %s. This HTTP triggered function executed successfully.\n", name)
 	}
 	fmt.Fprint(w, message)
+	hoge := os.Getenv("ENV_TEST")
+	log.Printf("ENV hoge is " + hoge)
 }
 
 func main() {
@@ -47,7 +49,7 @@ func main() {
 	if val, ok := os.LookupEnv("FUNCTIONS_CUSTOMHANDLER_PORT"); ok {
 		listenAddr = ":" + val
 	}
-	http.HandleFunc("/api/HttpExample", helloHandler)
+	http.HandleFunc("/api/HttpTrigger1", helloHandler)
 	log.Printf("About to listen on %s. Go to https://127.0.0.1%s/", listenAddr, listenAddr)
 	log.Fatal(http.ListenAndServe(listenAddr, nil))
 }
